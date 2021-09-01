@@ -15,7 +15,7 @@
           <button class="btn btn-secondary w-100" @click="clear">X</button>
         </div>
       </div>
-      <ul class="list-unstyled video-list-thumbs row text-center" v-if="!loading">
+      <ul class="list-unstyled video-list-thumbs row text-center pr-3" v-if="!loading">
         <li v-for="video in videos.items" class="col-lg-3 col-sm-4 col-xs-6 mt-2">
         <span>
           <img class="play spanHover" @click="getVideo(video)" :src="require('@/assets/play2.png')" alt="play" />

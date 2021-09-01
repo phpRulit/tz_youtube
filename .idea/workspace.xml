@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a65ab8c-0ddb-4d07-98a5-b0ad51e2f39d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tz_youtube.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tz_youtube.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/app/Http/Controllers/YouTubeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/app/Http/Controllers/YouTubeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-vendors.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-vendors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/play2.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/play2.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +182,7 @@
       <workItem from="1630472671706" duration="335000" />
       <workItem from="1630473914915" duration="1240000" />
       <workItem from="1630491982166" duration="598000" />
-      <workItem from="1630492617540" duration="1241000" />
+      <workItem from="1630492617540" duration="1467000" />
     </task>
     <servers />
   </component>

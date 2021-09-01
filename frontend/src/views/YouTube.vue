@@ -92,7 +92,7 @@ body {
 .play {
   position: absolute;
   top: 55px;
-  left:140px;
+  left:150px;
   z-index: 9999
 }
 .overVideoClose {
@@ -131,5 +131,11 @@ body {
 .spanHover:hover {
   opacity: 0.7;
   cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .play {
+    left:205px;
+  }
 }
 </style>

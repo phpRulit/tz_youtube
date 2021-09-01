@@ -2,17 +2,17 @@
   <div>
     <div class="col-md-12 pr-0" v-if="!video">
       <div class="col-md-12 mt-3 mb-3 pr-0 row">
-        <div class="col-lg-3 col-sm-3 col-xs-12 mb-2">
+        <div class="col-lg-2 col-md-4 col-sm-5 col-xs-12 mb-2">
           <select class="form-control" v-model="details.category" @change="getList" id="">
             <option :value="null">Выберите категорию...</option>
             <option v-if="categories && categories.length > 0" :value="cat.id" v-for="cat in categories">{{cat.snippet.title}}</option>
           </select>
         </div>
-        <div class="col-lg-7 col-sm-7 col-xs-12 mb-2">
+        <div class="col-lg-9 col-md-6 col-sm-5 col-xs-12 mb-2">
           <input type="text" v-model="details.search" placeholder="Введите запрос..." v-on:keyup.enter="getList" class="form-control">
         </div>
-        <div class="col-lg-2 col-sm-2 col-xs-12">
-          <button class="btn btn-secondary w-100" @click="clear">X</button>
+        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
+          <button class="btn btn-secondary w-100" :disabled="!details.category && details.search === ''" @click="clear">X</button>
         </div>
       </div>
       <ul class="list-unstyled video-list-thumbs row text-center pr-3" v-if="!loading">

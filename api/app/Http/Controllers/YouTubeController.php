@@ -10,6 +10,12 @@ class YouTubeController extends Controller
 {
     public function getPlaylistApi(Request $request): JsonResponse
     {
+        $v = Validator::make($request->all(), [
+            'search' => 'nullable|string',
+        ]);
+        if ($v->fails()) {
+            return response()->json(['errors' => $v->errors()]);
+        }
         $youtube = app::make('youtube');
         $maxResults = 16;
         if (empty($request['search'])) {

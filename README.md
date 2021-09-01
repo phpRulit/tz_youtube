@@ -5,4 +5,6 @@
 
 Развернуть приложение - make init
 
+В api/.env добавить свой api ключ разработчика Google
+
 front: http://localhost:8091 back: http://localhost:8092

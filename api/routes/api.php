@@ -23,6 +23,7 @@ Route::group([
         'namespace' => 'App\Http\Controllers'
     ], function () {
         Route::get('get-videos', 'YouTubeController@getPlaylistApi');
+        Route::get('get-categories', 'YouTubeController@getCategories');
     });
 
 });

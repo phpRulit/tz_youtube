@@ -19,7 +19,7 @@ class YouTubeController extends Controller
             return response()->json(['errors' => $v->errors()]);
         }
         $youtube = $this->getClient();
-        $maxResults = 4;
+        $maxResults = 16;
         $regionCode = 'RU';
         if (empty($request['category']) && empty($request['search'])) {
             $options = ['chart' => 'mostPopular', 'maxResults' => $maxResults, 'regionCode' => $regionCode];

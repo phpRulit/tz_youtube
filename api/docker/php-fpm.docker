@@ -1,0 +1,30 @@
+FROM php:7.4-fpm
+
+RUN pecl install -o -f redis \
+    && rm -rf /tmp/pear \
+    && docker-php-ext-enable redis
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libzip-dev \
+    libpng-dev \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libwebp-dev libpng-dev libxpm-dev \
+    locales \
+    zip \
+    jpegoptim optipng pngquant gifsicle \
+    vim \
+    unzip \
+    curl \
+    && docker-php-ext-configure gd \
+        && docker-php-ext-install gd \
+        && docker-php-ext-enable gd
+
+RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Чистим кэш
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+ADD ./php/default.ini /usr/local/etc/php/conf.d/default.ini
+
+WORKDIR /var/www

@@ -1,0 +1,7 @@
+FROM nginx:1.10
+
+ADD ./nginx/default.conf /etc/nginx/conf.d/default.conf
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+WORKDIR /var/www/api

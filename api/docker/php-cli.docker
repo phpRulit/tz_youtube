@@ -1,0 +1,12 @@
+FROM php:7.4-cli
+
+RUN pecl install -o -f redis \
+    && rm -rf /tmp/pear \
+    && docker-php-ext-enable redis
+
+RUN apt-get update && apt-get install -y libmcrypt-dev mariadb-client zip \
+    && docker-php-ext-install mysqli pdo pdo_mysql pcntl
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+WORKDIR /var/www

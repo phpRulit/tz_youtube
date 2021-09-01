@@ -1,0 +1,115 @@
+version: '3'
+services:
+  frontend-nginx:
+    build:
+      context: ./frontend/docker
+      dockerfile: nginx.docker
+    volumes:
+      - ./frontend:/var/www/frontend
+    depends_on:
+      - api-php-fpm
+    restart: always
+    ports:
+      - "8091:80"
+    networks:
+      - youtube
+
+  frontend-nodejs:
+    image: node:10.11-jessie
+    volumes:
+      - ./frontend:/var/www/frontend
+    restart: always
+    working_dir: /var/www/frontend
+    tty: true
+    networks:
+      - youtube
+
+  api-nginx:
+    build:
+      context: ./api/docker
+      dockerfile: nginx.docker
+    volumes:
+      - ./api:/var/www/api
+    restart: always
+    ports:
+      - "8092:80"
+    networks:
+      - youtube
+
+  api-nodejs:
+    image: node:10.14-alpine
+    volumes:
+      - ./api:/var/www/api
+    restart: always
+    working_dir: /var/www/api
+    tty: true
+    networks:
+      - youtube
+
+  api-php-fpm:
+    build:
+      context: ./api/docker
+      dockerfile: php-fpm.docker
+    volumes:
+      - ./api:/var/www/api
+      - ./storage:/var/www/storage
+    depends_on:
+      - api-mysql
+      - api-redis
+    restart: always
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=api-mysql"
+      - "REDIS_PORT=6379"
+      - "REDIS_HOST=api-redis"
+    networks:
+      - youtube
+
+  api-php-cli:
+    build:
+      context: ./api/docker
+      dockerfile: php-cli.docker
+    volumes:
+      - ./api:/var/www/api
+      - ./api/storage:/var/www/api/storage
+    depends_on:
+      - api-mysql
+      - api-redis
+    restart: always
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=api-mysql"
+      - "REDIS_PORT=6379"
+      - "REDIS_HOST=api-redis"
+    working_dir: /var/www/api
+    tty: true
+    networks:
+      - youtube
+
+  api-mysql:
+    image: mysql
+    restart: always
+    command: ["--default-authentication-plugin=mysql_native_password"]
+    volumes:
+      - ./api/storage/docker/mysql:/var/lib/mysql
+    environment:
+      - "MYSQL_ROOT_PASSWORD=357968"
+      - "MYSQL_USER=app"
+      - "MYSQL_PASSWORD=secret"
+      - "MYSQL_DATABASE=youtube"
+    ports:
+      - "33063:3306"
+    networks:
+      - youtube
+
+  api-redis:
+    image: redis:3.0
+    restart: always
+    ports:
+      - "63796:6379"
+    networks:
+      - youtube
+
+networks:
+  youtube:
+    driver: bridge

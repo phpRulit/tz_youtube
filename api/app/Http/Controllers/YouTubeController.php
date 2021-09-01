@@ -6,7 +6,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
-class YouTubeController
+class YouTubeController extends Controller
 {
     public function getPlaylistApi(Request $request): JsonResponse
     {

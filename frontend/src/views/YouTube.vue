@@ -1,7 +1,7 @@
 <template>
-  <div class="border">
-    <div class="col-md-12" v-if="!video">
-      <div class="col-md-12 mt-3 mb-3 row">
+  <div>
+    <div class="col-md-12 pr-0" v-if="!video">
+      <div class="col-md-12 mt-3 mb-3 pr-0 row">
         <div class="col-lg-3 col-sm-3 col-xs-12 mb-2">
           <select class="form-control" v-model="details.category" @change="getList" id="">
             <option :value="null">Выберите категорию...</option>
@@ -87,6 +87,7 @@ export default {
 <style>
 body {
   margin: 0;
+  padding: 0;
 }
 .play {
   position: absolute;

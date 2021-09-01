@@ -2,7 +2,13 @@
   <div class="border">
     <div class="col-md-12" v-if="!video">
       <div class="col-md-12 mt-3 mb-3 row">
-        <div class="col-md-10">
+        <div class="col-md-3">
+          <select class="form-control" v-model="details.category" @change="getList" id="">
+            <option :value="null">Выберите категорию...</option>
+            <option v-if="categories && categories.length > 0" :value="cat.id" v-for="cat in categories">{{cat.snippet.title}}</option>
+          </select>
+        </div>
+        <div class="col-md-7">
           <input type="text" v-model="details.search" placeholder="Введите запрос..." v-on:keyup.enter="getList" class="form-control">
         </div>
         <div class="col-md-2">
@@ -11,7 +17,8 @@
       </div>
       <ul class="list-unstyled video-list-thumbs row" v-if="!loading">
         <li v-for="video in videos.items" class="col-lg-3 col-sm-4 col-xs-6 mt-2">
-        <span class="spanHover" @click="getVideo(video)">
+        <span>
+          <img class="play spanHover" @click="getVideo(video)" :src="require('@/assets/play2.png')" alt="play" />
           <img :src="video.snippet.thumbnails.medium.url" :alt="video.snippet.title" />
         </span>
         </li>
@@ -19,7 +26,7 @@
     </div>
     <div  v-else>
       <span class="spanHover overVideoClose" @click="getVideo(null)">Закрыть</span>
-      <p class="overVideoDescription">
+      <p class="overVideoTitle">
         <span>{{video.snippet.title}}</span><br>
         <span class="w-100 small">{{video.snippet.description.length > 700 ? video.snippet.description.slice(0, 697) + '...' : video.snippet.description}}</span>
       </p>
@@ -35,7 +42,9 @@ export default {
   data () {
     return {
       videos: [],
+      categories: [],
       details: {
+        category: null,
         search: '',
       },
       loading: false,
@@ -47,12 +56,20 @@ export default {
     getList() {
       this.loading = true;
       this.getVideos(this.details)
-      .then(() => {
-        this.videos = this.$store.getters["videos"];
-        this.loading = false;
-      })
+          .then(() => {
+            this.videos = this.$store.getters["videos"];
+            this.loading = false;
+          })
+    },
+    ...mapActions(["getCategories"]),
+    getCats() {
+      this.getCategories()
+          .then(() => {
+            this.categories = this.$store.getters["categories"];
+          })
     },
     clear() {
+      this.details.category = null;
       this.details.search = '';
       this.getList();
     },
@@ -62,6 +79,7 @@ export default {
   },
   created() {
     this.getList();
+    this.getCats();
   }
 }
 </script>
@@ -70,25 +88,33 @@ export default {
 body {
   margin: 0;
 }
-.overVideoClose, .overVideoDescription, .video {
-  position:fixed;
+.play {
+  position: absolute;
+  top: 55px;
+  left:140px;
+  z-index: 9999
 }
-.overVideoClose, .overVideoDescription {
+.overVideoClose {
+  position:fixed;
   padding: 10px;
   background-color: black;
   color: white;
-  z-index:9999
-}
-.overVideoClose {
   top: 30px;
   right: 50%;
+  z-index:9999
 }
-.overVideoDescription {
+.overVideoTitle {
+  position:fixed;
+  padding: 10px;
+  background-color: black;
+  color: white;
   bottom: 50px;
   left: 20px;
   right: 20px;
+  z-index:9999
 }
 .video {
+  position:fixed;
   top:0;
   left:0;
   bottom:0;

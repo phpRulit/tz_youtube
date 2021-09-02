@@ -23,7 +23,13 @@ export default new Vuex.Store({
   },
   actions: {
     getVideos({commit}, details) {
-      return axios.get('/youtube/get-videos', {params: {category: details.category, search: details.search}})
+      return axios.get('/youtube/get-videos', {
+        params: {
+          max: details.max,
+          category: details.category,
+          search: details.search,
+          page: details.page,
+        }})
           .then(({data}) => {
             commit('setVideos',data)
           })

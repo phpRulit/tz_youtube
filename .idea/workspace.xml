@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a65ab8c-0ddb-4d07-98a5-b0ad51e2f39d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/app/Http/Controllers/YouTubeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/app/Http/Controllers/YouTubeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/YouTube.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/YouTube.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,6 +190,8 @@
       <workItem from="1630498351826" duration="191000" />
       <workItem from="1630498745437" duration="359000" />
       <workItem from="1630499279063" duration="32000" />
+      <workItem from="1630500327372" duration="893000" />
+      <workItem from="1630570314776" duration="198000" />
     </task>
     <servers />
   </component>

@@ -12,7 +12,7 @@ class YouTubeController extends Controller
     public function getPlaylistApi(Request $request): JsonResponse
     {
         $v = Validator::make($request->all(), [
-            'max' => 'nullable|integer',
+            'max' => 'required|integer',
             'page' => 'nullable|string',
             'category' => 'nullable|integer',
             'search' => 'nullable|string',

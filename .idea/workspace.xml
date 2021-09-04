@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a65ab8c-0ddb-4d07-98a5-b0ad51e2f39d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/app/Http/Controllers/YouTubeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/app/Http/Controllers/YouTubeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-vendors.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-vendors.js" afterDir="false" />
-    </list>
+    <list default="true" id="3a65ab8c-0ddb-4d07-98a5-b0ad51e2f39d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,7 +155,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tz_bank" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../laravel_real_code" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -198,7 +192,7 @@
       <workItem from="1630641796131" duration="421000" />
       <workItem from="1630643082271" duration="63000" />
       <workItem from="1630645383283" duration="10000" />
-      <workItem from="1630657119779" duration="43000" />
+      <workItem from="1630657119779" duration="281000" />
     </task>
     <servers />
   </component>

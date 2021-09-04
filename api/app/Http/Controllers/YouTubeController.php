@@ -22,7 +22,7 @@ class YouTubeController extends Controller
         }
         $youtube = $this->getClient();
         $maxResults = $request['max'];
-        $regionCode = 'RU';
+        $regionCode = 'RU'; //коды стран - https://ru.wikipedia.org/wiki/ISO_3166-1 (нам нужны Alpha-2 ISO 3166-1)
         if (empty($request['category']) && empty($request['search']) && empty($request['page'])) {
             $options = ['chart' => 'mostPopular', 'maxResults' => $maxResults, 'regionCode' => $regionCode];
             $videos = $youtube->videos->listVideos('snippet', $options);

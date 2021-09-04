@@ -155,7 +155,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../laravel_real_code" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -193,6 +193,7 @@
       <workItem from="1630643082271" duration="63000" />
       <workItem from="1630645383283" duration="10000" />
       <workItem from="1630657119779" duration="281000" />
+      <workItem from="1630739208808" duration="764000" />
     </task>
     <servers />
   </component>

@@ -5,7 +5,7 @@
         <div class="col-lg-2 col-md-4 col-sm-5 col-xs-12 mb-2">
           <select class="form-control" v-model="details.category" @change="getList(false, true)" id="">
             <option :value="null">Выберите категорию...</option>
-            <option v-if="categories && categories.length > 0" :value="cat.id" v-for="cat in categories">{{cat.snippet.title}}</option>
+            <option v-if="categories.length > 0" :value="cat.id" v-for="cat in categories">{{cat.snippet.title}}</option>
           </select>
         </div>
         <div class="col-lg-9 col-md-6 col-sm-5 col-xs-12 mb-2">
